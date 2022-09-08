@@ -62,10 +62,14 @@ Usage:
     git remote set-url origin ssh://...( see *** ) 
     git pull origin --allow-unrelated-histories
     (exit vi :q)
+    ````
+  - Edit the file compute.tf (vi or the Cloud editor)
+    - Look for terraform.tfstate and replace the URL by the one created above
+    - commit the change to the git repository
+    ````
     git push origin
     ````
-    Start also the Cloud text editor (pen icon at the top right) to modify the files if needed.    
-
+    
 - Create a pipeline
   - Add a stage
     - type Managed Build
