@@ -23,12 +23,37 @@ Usage:
   - Create Repository
     - name: oci-devops-instance-nginx
   - Click create
-  - Copy the SSH connection to the repository:
-    ex: ssh://devops.scmservice.eu-frankfurt-1.oci.oraclecloud.com/namespaces/abcdefgh/projects/oci-devops-instance-nginx/repositories/oci-devops-instance-nginx
-  - Start the cloud console :
-    - 
-    
-- Import this project
+  - In the create screeen, look at the documentation (***) to create a connection with SSH to the git repository
+    - In short, with your user, top/right icon, user name, create a API KEY
+    - Start the cloud shell (icon at the top)
+    ```
+    mkdir .oci
+    vi .oci/oci_api_key.pem
+    (copy paste the private API key)
+    ...
+    -----BEGIN RSA PRIVATE KEY-----
+    ...
+    -----END RSA PRIVATE KEY-----
+    ...
+    vi .ssh/config
+    (see doc ***)
+    ...
+    Host devops.scmservice.*.oci.oraclecloud.com
+      User oracleidentitycloudservice/xxx@xxxx.com@xxxx
+      IdentityFile ~/.oci/oci_api_key.pem 
+    ...
+    cd $HOME
+    git clone https://github.com/mgueury/oci-devops-instance-nginx.git
+    cd oci-devops-instance-nginx.git
+    rm .git
+    git init
+    git add *
+    git remote set-url origin ssh://...( see *** ) 
+    git pull origin --allow-unrelated-histories
+    git push origin
+    ````
+    Start also the Cloud text editor (pen icon at the top right) to modify the files if needed.    
+
 - Create a pipeline
   - use a managed build based on the above repository and buid_spec.yaml file
 - Add 3 parameters to the pipeline
