@@ -6,11 +6,22 @@ Example:
 
 Usage:
 - Login to the OCI cloud homepage.
-- Create a ntification topic
+- Create a notification topic
   Go to Menu - Developers Services / Applicaition Integration / Notifications
   Click "Create Topic"
   - Name: TopicDevops
   - Create
+- Create a remote terraform.tfstate
+  - On your machine create a empty file. touch terraform.tfstate
+  - Go to Menu - Storage / Buckets
+  - Create bucket 
+    - Give a name. ex: terraform-bucket
+     - Create
+  - In the bucket upload the terraform.tfstate
+  - Right click on the ... at the end of the uploaded file
+  - Click Create Pre-Authenticated Request
+  - Choose an expiration date in a far future.
+    - Copy the URL: ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate
 - Create a devops project
   Go to Menu - Developers Services / DevOps / Projects
   - Click Create DevOps Project
@@ -44,9 +55,10 @@ Usage:
     ...
     cd $HOME
     git clone https://github.com/mgueury/oci-devops-instance-nginx.git
-    cd oci-devops-instance-nginx.git
+    cd oci-devops-instance-nginx
     git remote set-url origin ssh://...( see *** ) 
     git pull origin --allow-unrelated-histories
+    (exit vi :q)
     git push origin
     ````
     Start also the Cloud text editor (pen icon at the top right) to modify the files if needed.    
@@ -57,5 +69,6 @@ Usage:
   - TF_VAR_tenancy_ocid (ex: ocid1.tenancy.oc1..aaaaaaaa4w...)
   - TF_VAR_compartment_ocid (ex: ocid1.compartment.oc1..aaaaaaaa...)
   - TF_VAR_region (ex: eu-frankfurt-1)
+  - TF_VAR_tfstate_url (ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate)
 - Run the pipeline
 - Check the output and the compute/instance console
