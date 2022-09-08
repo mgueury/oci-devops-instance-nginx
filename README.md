@@ -67,11 +67,19 @@ Usage:
     Start also the Cloud text editor (pen icon at the top right) to modify the files if needed.    
 
 - Create a pipeline
-  - use a managed build based on the above repository and buid_spec.yaml file
-- Add 3 parameters to the pipeline
-  - TF_VAR_tenancy_ocid (ex: ocid1.tenancy.oc1..aaaaaaaa4w...)
-  - TF_VAR_compartment_ocid (ex: ocid1.compartment.oc1..aaaaaaaa...)
-  - TF_VAR_region (ex: eu-frankfurt-1)
-  - TF_VAR_tfstate_url (ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate)
-- Run the pipeline
+  - Add a stage
+    - type Managed Build
+    - Name: build
+    - Primary Code repository - Click Select
+      - Type oci code repository
+      - Select the repositoty
+      - Click 'Save'
+    - Click 'Add' 
+  - Click parameters:
+    - TF_VAR_tenancy_ocid (ex: ocid1.tenancy.oc1..aaaaaaaa4w...)
+    - TF_VAR_compartment_ocid (ex: ocid1.compartment.oc1..aaaaaaaa...)
+    - TF_VAR_region (ex: eu-frankfurt-1)
+    - TF_VAR_tfstate_url (ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate)
+- Back to the Build Pipeline tab
+  - Click Start Manual Run
 - Check the output and the compute/instance console
