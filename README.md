@@ -7,10 +7,10 @@ Example:
 Usage:
 - Login to the OCI cloud homepage.
 - Create a notification topic
-  Go to Menu - Developers Services / Applicaition Integration / Notifications
-  Click "Create Topic"
-  - Name: TopicDevops
-  - Create
+  - Go to Menu - Developers Services / Applicaition Integration / Notifications
+  - Click "Create Topic"
+    - Name: TopicDevops
+    - Create
 - Create a remote terraform.tfstate
   - On your machine create a empty file. For ex with the command:
     ````
