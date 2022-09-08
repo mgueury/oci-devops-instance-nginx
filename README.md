@@ -67,6 +67,8 @@ Usage:
     - Look for terraform.tfstate and replace the URL by the one created above
     - commit the change to the git repository
     ````
+    git add *
+    git commit -m "tfstate url"
     git push origin
     ````
     
