@@ -65,6 +65,11 @@ Usage:
     ````
   - Edit the file compute.tf (vi or the Cloud editor)
     - Look for terraform.tfstate and replace the URL by the one created above
+    - ideally, you should replace the certificate id_devops_rsa and id_devops_rsa.pub
+    ````
+    rm id_devops_rsa id_devops_rsa.pub
+    ssh-keygen -t rsa -f id_devops_rsa -N ''
+    ````
     - commit the change to the git repository
     ````
     git add *
@@ -88,3 +93,16 @@ Usage:
 - Back to the Build Pipeline tab
   - Click Start Manual Run
 - Check the output and the compute/instance console
+
+````
+ssh opc@xxx.xxx.xxx.xxx -i id_devops_rsa
+curl http://localhost
+<html>
+<head>
+ <title>DevOps</title>
+</head>
+<body>
+  <h2>Hello from DevOps</h2>
+</body>
+</html>
+````
