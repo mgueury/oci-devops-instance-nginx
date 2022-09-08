@@ -45,9 +45,6 @@ Usage:
     cd $HOME
     git clone https://github.com/mgueury/oci-devops-instance-nginx.git
     cd oci-devops-instance-nginx.git
-    rm .git
-    git init
-    git add *
     git remote set-url origin ssh://...( see *** ) 
     git pull origin --allow-unrelated-histories
     git push origin
