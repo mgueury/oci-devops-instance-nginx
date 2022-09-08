@@ -12,7 +12,10 @@ Usage:
   - Name: TopicDevops
   - Create
 - Create a remote terraform.tfstate
-  - On your machine create a empty file. touch terraform.tfstate
+  - On your machine create a empty file. For ex with the command:
+    ````
+    touch terraform.tfstate
+    ````
   - Go to Menu - Storage / Buckets
   - Create bucket 
     - Give a name. ex: terraform-bucket
