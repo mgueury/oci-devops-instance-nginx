@@ -83,7 +83,6 @@ Usage:
     - TF_VAR_tenancy_ocid (ex: ocid1.tenancy.oc1..aaaaaaaa4w...)
     - TF_VAR_compartment_ocid (ex: ocid1.compartment.oc1..aaaaaaaa...)
     - TF_VAR_region (ex: eu-frankfurt-1)
-    - TF_VAR_tfstate_url (ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate)
 - Back to the Build Pipeline tab
   - Click Start Manual Run
 - Check the output and the compute/instance console
