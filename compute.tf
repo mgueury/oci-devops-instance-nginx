@@ -47,6 +47,9 @@ variable "instance_shape_config_memory_in_gbs" {
   default = 8 
 }
 
+variable "tfstate_url" {
+}
+
 variable "instance_image_ocid" {
   type = map(string)
 
@@ -57,7 +60,7 @@ variable "instance_image_ocid" {
 
 terraform {
   backend "http" {
-    address = "https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ImwyAv5IhF9JeW_kJHZJK7yCYDpL0bGbky3PQ4ektR1rPE8k7mDorDpVDFFLfa55/n/frsxwtjslf35/b/shared-bucket/o/terraform_devopsinstance1.tfstate"
+    address = var.tfstate_url 
     update_method = "PUT"
   }
 }
