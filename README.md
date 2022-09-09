@@ -28,7 +28,7 @@ Step-by-Step:
   - Click "Create Pre-Authenticated Request"
     - Choose an expiration date in a far future.
     - Click "Create Pre-Authenticated Request"
-    - Copy the URL: (**1**) ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate 
+    - Copy the URL: (##1##) ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate 
 - Create a devops project
   - Go to Menu - Developers Services / DevOps / Projects
   - Click Create DevOps Project
@@ -43,27 +43,27 @@ Step-by-Step:
     - name: oci-devops-instance-nginx
     - Click "Create Repository"
   - In the create screeen, look at the documentation to create a connection with SSH to the git repository
-    - Copy the line to paste in your ssh config file (**2**)
-    - Copy the SSH connection to git repository (**3**)
+    - Copy the line to paste in your ssh config file (##2##)
+    - Copy the SSH connection to git repository (##3##)
     - In short,
       - Go on the top/right icon. Open the menu.
       - Click on your user name
       - In your user screen, scroll down. Choose API Keys
       - Click "Add API Key"
-        - Download the Private Key (**4**)
+        - Download the Private Key (##4##)
         - Click "Add"
     - Start the cloud shell (icon at the top)
     ```
     mkdir .oci
     vi .oci/oci_api_key.pem
-    (copy paste the private API key see **4**)
+    (copy paste the private API key see ##4##)
     ...
     -----BEGIN RSA PRIVATE KEY-----
     ...
     -----END RSA PRIVATE KEY-----
     ...
     vi .ssh/config
-    (see doc **2**)
+    (see ##2##)
     ...
     Host devops.scmservice.*.oci.oraclecloud.com
       User oracleidentitycloudservice/xxx@xxxx.com@xxxx
@@ -72,12 +72,12 @@ Step-by-Step:
     cd $HOME
     git clone https://github.com/mgueury/oci-devops-instance-nginx.git
     cd oci-devops-instance-nginx
-    git remote set-url origin ssh://...( see **3** ) 
+    git remote set-url origin ssh://...( see ##3## ) 
     git pull origin --allow-unrelated-histories
     (exit vi :q)
     ````
   - Edit the file compute.tf (vi or the Cloud editor)
-    - Look for terraform.tfstate and replace the URL by the one created above
+    - Look for terraform.tfstate and replace the URL by the one created above (see ##1##)
     - ideally, you should replace the certificate id_devops_rsa and id_devops_rsa.pub
     ````
     rm id_devops_rsa id_devops_rsa.pub
