@@ -109,10 +109,14 @@ Step-by-Step:
       - Name: TF_VAR_compartment_ocid / Value: your compartment, ex: ocid1.compartment.oc1..aaaaaaaa...
       - Name: TF_VAR_region / Value: your region, ex: eu-frankfurt-1
 - Back to the Build Pipeline tab
-  - Click Start Manual Run
-- Check the output and the compute/instance console
+  - Click "Start Manual Run"
+  - Click again "Start Manual Run"
+- Check the output and the compute/instance console.
+  - Get the IP from the end of the log of the build (or from the compute list)
+  - Start the Cloud shell
 
 ````
+cd oci-devops-instance-nginx
 ssh opc@xxx.xxx.xxx.xxx -i id_devops_rsa
 curl http://localhost
 <html>
