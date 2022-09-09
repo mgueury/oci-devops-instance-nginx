@@ -6,12 +6,12 @@ In this sample, you will:
 
 Step-by-Step:
 - Login to the OCI cloud homepage.
-- Create a notification topic
+- Create a notification topic. You need it to get notifications about your devops build.
   - Go to Menu - Developers Services / Applicaition Integration / Notifications
   - Click "Create Topic"
     - Name: TopicDevops
     - Create
-- Create a remote terraform.tfstate
+- Create a remote terraform.tfstate. You need it to have a central place to store your terraform state.
   - On your machine create a empty file. For ex with the command:
     ````
     touch terraform.tfstate
