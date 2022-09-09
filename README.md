@@ -9,7 +9,7 @@ Step-by-Step:
 - Create a notification topic. You need it to get notifications about your devops build.
   - Go to Menu - Developers Services / Applicaition Integration / Notifications
   - Click "Create Topic"
-    - Name: TopicDevops
+    - Name: topic-devops
     - Create
 - Create a remote terraform.tfstate. You need it to have a central place to store your terraform state.
   - On your machine create a empty file. For ex with the command:
@@ -20,25 +20,36 @@ Step-by-Step:
   - Create bucket 
     - Give a name. ex: terraform-bucket
      - Create
-  - In the bucket upload the terraform.tfstate
+  - In the bucket 
+    - Click "Upload"
+    - Choose the terraform.tfstate
+    - Click "Upload"
   - Right click on the ... at the end of the uploaded file
-  - Click Create Pre-Authenticated Request
-  - Choose an expiration date in a far future.
+  - Click "Create Pre-Authenticated Request"
+    - Choose an expiration date in a far future.
+    - Click "Create Pre-Authenticated Request"
     - Copy the URL: ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate
 - Create a devops project
-  Go to Menu - Developers Services / DevOps / Projects
+  - Go to Menu - Developers Services / DevOps / Projects
   - Click Create DevOps Project
     - Project name: oci-devops-instance-nginx
     - Select the Topic (TopicDevops)
     - Click "Create devops project"
-  - In the homepage, click "Enable log" and follow the wizard
+  - In the homepage, click "Enable log". 
+    - Then enable the "Enable log" Checkbox
 - Create a repository
   - Click Code repositories
   - Create Repository
     - name: oci-devops-instance-nginx
-  - Click create
+    - Click "Create Repository"
   - In the create screeen, look at the documentation (***) to create a connection with SSH to the git repository
-    - In short, with your user, top/right icon, user name, create a API KEY
+    - In short,
+      - Go on the top/right icon. Open the menu.
+      - Click on your user name
+      - In your user screen, scroll down. Choose API Keys
+      - Click "Add API Key"
+        - Download the Private Key
+        - Click "Add"
     - Start the cloud shell (icon at the top)
     ```
     mkdir .oci
