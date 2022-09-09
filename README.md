@@ -91,18 +91,23 @@ Step-by-Step:
     ````
     
 - Create a pipeline
-  - Add a stage
-    - type Managed Build
-    - Name: build
+  - Back to you DevOps project
+  - Click "Build Pipeline" on the left
+  - Create "Build Pipeline"
+    - Name: pipeline
+  - Click "Add a stage"
+    - type "Managed Build". Next.
+    - Stage Name: build
     - Primary Code repository - Click Select
       - Type oci code repository
       - Select the repositoty
       - Click 'Save'
     - Click 'Add' 
-  - Click parameters:
-    - TF_VAR_tenancy_ocid (ex: ocid1.tenancy.oc1..aaaaaaaa4w...)
-    - TF_VAR_compartment_ocid (ex: ocid1.compartment.oc1..aaaaaaaa...)
-    - TF_VAR_region (ex: eu-frankfurt-1)
+  - Go to the tab "Parameters:
+    - Add:
+      - Name: TF_VAR_tenancy_ocid / Value: your tenancy ex: ocid1.tenancy.oc1..aaaaaaaa4w...
+      - Name: TF_VAR_compartment_ocid / Value: your compartment, ex: ocid1.compartment.oc1..aaaaaaaa...
+      - Name: TF_VAR_region / Value: your region, ex: eu-frankfurt-1
 - Back to the Build Pipeline tab
   - Click Start Manual Run
 - Check the output and the compute/instance console
