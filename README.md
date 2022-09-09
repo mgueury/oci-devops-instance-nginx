@@ -1,6 +1,6 @@
 In this sample, you will:
   - Install OCI Devops
-  - Create an automation pipeline to create of a VCN, subnet and compute
+  - Create an automation pipeline that will use Terraform to create a VCN, subnet and compute
     - Install NGINX on that compute
     - Copy a sample website, index.html in /usr/share/nginx/html/
 
