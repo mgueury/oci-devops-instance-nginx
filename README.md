@@ -118,6 +118,7 @@ Step-by-Step:
 
 ````
 cd oci-devops-instance-nginx
+chmod 600 id_devops_rsa
 ssh opc@xxx.xxx.xxx.xxx -i id_devops_rsa
 curl http://localhost
 <html>
