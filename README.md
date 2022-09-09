@@ -27,6 +27,7 @@ Step-by-Step:
   - Right click on the ... at the end of the uploaded file
   - Click "Create Pre-Authenticated Request"
     - Choose an expiration date in a far future.
+    - Choose "Permit object reads and writes"
     - Click "Create Pre-Authenticated Request"
     - Copy the URL: (##1##) ex: https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/xxxxxxxxxx/n/xxxxx/b/terraform-bucket/o/terraform.tfstate 
 - Create a devops project
