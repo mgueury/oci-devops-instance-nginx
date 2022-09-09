@@ -1,10 +1,10 @@
-Example:
-- OCI Devops
-  - Creation of a VCN, subnet and compute
-  - Installation of NGINX on that compute
-  - Copy the file index.html in /usr/share/nginx/html/
+In this sample, you will:
+  - Install OCI Devops
+  - Use a DevOps pipeline to create of a VCN, subnet and compute
+    - Install NGINX on that compute
+    - Copy a sample website, index.html in /usr/share/nginx/html/
 
-Usage:
+Step-by-Step:
 - Login to the OCI cloud homepage.
 - Create a notification topic
   - Go to Menu - Developers Services / Applicaition Integration / Notifications
